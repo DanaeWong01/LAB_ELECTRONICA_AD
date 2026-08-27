@@ -42,13 +42,13 @@ void setup() {
   //inicializar el uart de la terminal del pc al baudrate
   Serial.begin(115200);
   //inicializar la serial para comunicacion de salida
-  //Serial2.begin(9600, SERIAL_8N1, -1, 10); //pin GPIO10 es el de salida para darle a la fpga
+  Serial2.begin(9600, SERIAL_8N1, -1, 17); //pin GPIO10 es el de salida para darle a la fpga
 }
 
 void loop() {
   //Ocupamos analogRead() para leer el input analogo
   V_adc = analogRead(PIN_lec); //lectura del voltaje desd el ADC
-  Serial.println(V_adc);
+  //Serial.println(V_adc);
   //Reescalamos los voltajes que miden el ADC como
   V_dgt = V_adc*V_ref/N;
   Serial.println(V_dgt);
@@ -56,11 +56,12 @@ void loop() {
   //hacemos la correccion del offset de voltaje que tiene la salida
   //levantada en 1.65v y ademas la correccion de fase
   V_okd = -(V_dgt - 1.65)+1.65; //esto resulta de al V_dgt restarle 1.65 de offset, invertirlo 
+  //Serial.println(V_okd);
   // y luego sumarlo los 1.65 que tiene de offset
 
   //Como queremos mostrar tambien la entrada original del circuito acondicionador
   // tambien lo recuperamos desde el valor de entrada del adc (de 0 a 3.3V)
-  V_anlg = -(V_dgt - 1.65)/(0.427) + 6.5; 
+  V_anlg = -(V_dgt - 1.65)/(0.43) + 6.5; 
 
   Serial.println(V_anlg);
   // tambien corregimos lo que seria el valor original analogico de 3 a 10V
@@ -69,7 +70,7 @@ void loop() {
   //if (V_anlg < 3.0) V_anlg = 3.0;
   
   //Separamos el valor de voltaje del adc en unidades
-  V_bcdd = (int)(V_okd*100.0);
+  V_bcdd = (int)(V_dgt*100.0);
 
   dd = (V_bcdd/1000)%10; //decena
   du = (V_bcdd/100)%10; //unidad
@@ -117,23 +118,23 @@ void loop() {
   //Mandamos un byte de inicio, los datos de voltaje del adc
   //y los datos de voltaje original de entrada
 
-  //Serial2.write(0xEE); //byte de inicio
+  Serial2.write(0xEE); //byte de inicio
   //Serial.println(0xEE);
 
   // enviamos el dato del voltaje del adc
-  // Serial2.write(Vd1); //voltaje del adc en formado decena,unidad
-  // Serial2.write(Vd2); //voltaje del adc en formato decima,centesima
+  Serial2.write(Vd1); //voltaje del adc en formado decena,unidad
+  Serial2.write(Vd2); //voltaje del adc en formato decima,centesima
 
   //Serial.println(Vd1);
   //Serial.println(Vd2); 
 
   // enviamos el dato del voltaje original de entrada al circuito
-  // Serial2.write(Va1); //voltaje original en formato decena,unidad
-  // Serial2.write(Va2); //voltaje original en formato decima,centesima
+  Serial2.write(Va1); //voltaje original en formato decena,unidad
+  Serial2.write(Va2); //voltaje original en formato decima,centesima
 
   //Serial.println(Va1); 
   //Serial.println(Va2); 
 
-  Serial.println(0xFF);
-  //Serial2.write(0xFF); //byte de termino
+  //Serial.println(0xFF);
+  Serial2.write(0xFF); //byte de termino
 }
