@@ -1,0 +1,8 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/LAB_ELECTRONICA_AD/EXP2/Hardware/ip_create/ip_create.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/LAB_ELECTRONICA_AD/EXP2/Hardware/ip_create/ip_create.srcs/sim_1/new/TB_display.v,1790976616,verilog,,,,TB_display,,,,,,,,
+C:/LAB_ELECTRONICA_AD/EXP2/Hardware/ip_create/ip_create.srcs/sources_1/imports/Verilog code/display.v,1790976258,verilog,,C:/LAB_ELECTRONICA_AD/EXP2/Hardware/ip_create/ip_create.srcs/sources_1/imports/Verilog code/display_7segmentos.v,,display_voltaje,,,,,,,,
+C:/LAB_ELECTRONICA_AD/EXP2/Hardware/ip_create/ip_create.srcs/sources_1/imports/Verilog code/display_7segmentos.v,1787929789,verilog,,C:/LAB_ELECTRONICA_AD/EXP2/Hardware/ip_create/ip_create.srcs/sim_1/new/TB_display.v,,seven_segment_display_anodo,,,,,,,,

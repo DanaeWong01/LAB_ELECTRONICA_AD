@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct  2 19:10:27 2026" VIVADOVERSION="2020.1">
+
+  <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:basys3:part0:1.1" DEVICE="7a35t" NAME="exp2" PACKAGE="cpg236" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="generador_seno_0" PORT="clk"/>
+        <CONNECTION INSTANCE="modular_clk_div_0" PORT="clk"/>
+        <CONNECTION INSTANCE="clk_mgnmnt_0" PORT="clk"/>
+        <CONNECTION INSTANCE="uart_rx_0" PORT="clk"/>
+        <CONNECTION INSTANCE="modular_clk_div_1" PORT="clk"/>
+        <CONNECTION INSTANCE="display_voltaje_0" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="counter_0" PORT="rst"/>
+        <CONNECTION INSTANCE="generador_seno_0" PORT="rst"/>
+        <CONNECTION INSTANCE="counter_1" PORT="rst"/>
+        <CONNECTION INSTANCE="modular_clk_div_0" PORT="rst"/>
+        <CONNECTION INSTANCE="clk_mgnmnt_0" PORT="rst"/>
+        <CONNECTION INSTANCE="uart_rx_0" PORT="rst"/>
+        <CONNECTION INSTANCE="OR_0" PORT="rst"/>
+        <CONNECTION INSTANCE="display_voltaje_0" PORT="rst"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="1" NAME="sw_freq" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw_freq">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_mgnmnt_0" PORT="sw"/>
+        <CONNECTION INSTANCE="ss_driver_0" PORT="sw"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sw_sgnl" SIGIS="undef" SIGNAME="External_Ports_sw_sgnl">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux_0" PORT="sw_sgnl"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="pwm" SIGIS="undef" SIGNAME="Comparador_0_pwm">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Comparador_0" PORT="pwm"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rx" SIGIS="undef" SIGNAME="External_Ports_rx">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="uart_rx_0" PORT="rx"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="6" NAME="segments" RIGHT="0" SIGIS="undef" SIGNAME="display_voltaje_0_segments">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="display_voltaje_0" PORT="segments"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="display_voltaje_0_an">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="display_voltaje_0" PORT="an"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="dp" SIGIS="undef" SIGNAME="display_voltaje_0_dp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="display_voltaje_0" PORT="dp"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/Comparador_0" HWVERSION="1.0" INSTANCE="Comparador_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Comparador" VLNV="xilinx.com:user:Comparador:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_Comparador_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="sgn" RIGHT="0" SIGIS="undef" SIGNAME="mux_0_sgnl">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux_0" PORT="sgnl"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="rampa" RIGHT="0" SIGIS="undef" SIGNAME="counter_1_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="counter_1" PORT="addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pwm" SIGIS="undef" SIGNAME="Comparador_0_pwm">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="pwm"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/OR_0" HWVERSION="1.0" INSTANCE="OR_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OR" VLNV="xilinx.com:user:OR:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_OR_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_uart" SIGIS="undef" SIGNAME="uart_rx_0_rst_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="uart_rx_0" PORT="rst_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="uart_clk_rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="OR_0_uart_clk_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="modular_clk_div_1" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/clk_mgnmnt_0" HWVERSION="1.0" INSTANCE="clk_mgnmnt_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_mgnmnt" VLNV="xilinx.com:user:clk_mgnmnt:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N_220" VALUE="888"/>
+        <PARAMETER NAME="N_391" VALUE="498"/>
+        <PARAMETER NAME="N_554" VALUE="352"/>
+        <PARAMETER NAME="N_739" VALUE="264"/>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_clk_mgnmnt_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="sw" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw_freq">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sw_freq"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="clk_mgnmnt_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="counter_0" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/counter_0" HWVERSION="1.0" INSTANCE="counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="counter" VLNV="xilinx.com:user:counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_counter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_div" SIGIS="undef" SIGNAME="clk_mgnmnt_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_mgnmnt_0" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="counter_0_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="generador_seno_0" PORT="addr"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/counter_1" HWVERSION="1.0" INSTANCE="counter_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="counter" VLNV="xilinx.com:user:counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_counter_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_div" SIGIS="undef" SIGNAME="modular_clk_div_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="modular_clk_div_0" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="counter_1_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Comparador_0" PORT="rampa"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/display_voltaje_0" HWVERSION="1.0" INSTANCE="display_voltaje_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="display_voltaje" VLNV="xilinx.com:user:display_voltaje:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_display_voltaje_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="display_value" RIGHT="0" SIGIS="undef" SIGNAME="ss_driver_0_display">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ss_driver_0" PORT="display"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="segments" RIGHT="0" SIGIS="undef" SIGNAME="display_voltaje_0_segments">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="segments"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="display_voltaje_0_an">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="an"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dp" SIGIS="undef" SIGNAME="display_voltaje_0_dp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dp"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/generador_seno_0" HWVERSION="1.0" INSTANCE="generador_seno_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="generador_seno" VLNV="xilinx.com:user:generador_seno:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_generador_seno_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="counter_0_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="counter_0" PORT="addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="n_out" RIGHT="0" SIGIS="undef" SIGNAME="generador_seno_0_n_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux_0" PORT="sen"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/modular_clk_div_0" HWVERSION="1.0" INSTANCE="modular_clk_div_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="modular_clk_div" VLNV="xilinx.com:user:modular_clk_div:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_modular_clk_div_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="modular_clk_div_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="counter_1" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/modular_clk_div_1" HWVERSION="1.0" INSTANCE="modular_clk_div_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="modular_clk_div" VLNV="xilinx.com:user:modular_clk_div:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_modular_clk_div_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="OR_0_uart_clk_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OR_0" PORT="uart_clk_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="modular_clk_div_1_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="uart_rx_0" PORT="clk_uart"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/mux_0" HWVERSION="1.0" INSTANCE="mux_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux" VLNV="xilinx.com:user:mux:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_mux_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="sen" RIGHT="0" SIGIS="undef" SIGNAME="generador_seno_0_n_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="generador_seno_0" PORT="n_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="esp" RIGHT="0" SIGIS="undef" SIGNAME="uart_rx_0_msg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="uart_rx_0" PORT="msg"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sw_sgnl" SIGIS="undef" SIGNAME="External_Ports_sw_sgnl">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sw_sgnl"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="sgnl" RIGHT="0" SIGIS="undef" SIGNAME="mux_0_sgnl">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Comparador_0" PORT="sgn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/ss_driver_0" HWVERSION="1.0" INSTANCE="ss_driver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ss_driver" VLNV="xilinx.com:user:ss_driver:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="f_220" VALUE="0x0220"/>
+        <PARAMETER NAME="f_391" VALUE="0x0391"/>
+        <PARAMETER NAME="f_554" VALUE="0x0554"/>
+        <PARAMETER NAME="f_739" VALUE="0x0739"/>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_ss_driver_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1" NAME="sw" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw_freq">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sw_freq"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="display" RIGHT="0" SIGIS="undef" SIGNAME="ss_driver_0_display">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="display_voltaje_0" PORT="display_value"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/uart_rx_0" HWVERSION="1.0" INSTANCE="uart_rx_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="uart_rx" VLNV="xilinx.com:user:uart_rx:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IDLE" VALUE="&quot;000&quot;"/>
+        <PARAMETER NAME="WAIT" VALUE="&quot;001&quot;"/>
+        <PARAMETER NAME="RX" VALUE="&quot;010&quot;"/>
+        <PARAMETER NAME="STOP" VALUE="&quot;011&quot;"/>
+        <PARAMETER NAME="SEND" VALUE="&quot;100&quot;"/>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="exp2_uart_rx_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_uart" SIGIS="undef" SIGNAME="modular_clk_div_1_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="modular_clk_div_1" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rx" SIGIS="undef" SIGNAME="External_Ports_rx">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rx"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="msg" RIGHT="0" SIGIS="undef" SIGNAME="uart_rx_0_msg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux_0" PORT="esp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="rst_div" SIGIS="undef" SIGNAME="uart_rx_0_rst_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OR_0" PORT="rst_uart"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="msg_ready" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

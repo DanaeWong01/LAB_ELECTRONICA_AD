@@ -1,0 +1,53 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.52623",
+   "Default View_TopLeft":"-534,0",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk -pg 1 -lvl 0 -x -10 -y 300 -defaultsOSRD
+preplace port rst -pg 1 -lvl 0 -x -10 -y 320 -defaultsOSRD
+preplace port sw_sgnl -pg 1 -lvl 0 -x -10 -y 570 -defaultsOSRD
+preplace port pwm -pg 1 -lvl 6 -x 1270 -y 90 -defaultsOSRD
+preplace port rx -pg 1 -lvl 0 -x -10 -y 590 -defaultsOSRD
+preplace port dp -pg 1 -lvl 6 -x 1270 -y 310 -defaultsOSRD
+preplace portBus sw_freq -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
+preplace portBus segments -pg 1 -lvl 6 -x 1270 -y 270 -defaultsOSRD
+preplace portBus an -pg 1 -lvl 6 -x 1270 -y 290 -defaultsOSRD
+preplace inst counter_0 -pg 1 -lvl 2 -x 360 -y 330 -defaultsOSRD
+preplace inst generador_seno_0 -pg 1 -lvl 3 -x 590 -y 310 -defaultsOSRD
+preplace inst mux_0 -pg 1 -lvl 4 -x 820 -y 370 -defaultsOSRD
+preplace inst Comparador_0 -pg 1 -lvl 5 -x 1100 -y 90 -defaultsOSRD
+preplace inst counter_1 -pg 1 -lvl 4 -x 820 -y 100 -defaultsOSRD
+preplace inst modular_clk_div_0 -pg 1 -lvl 3 -x 590 -y 90 -defaultsOSRD
+preplace inst clk_mgnmnt_0 -pg 1 -lvl 1 -x 140 -y 320 -defaultsOSRD
+preplace inst uart_rx_0 -pg 1 -lvl 3 -x 590 -y 480 -defaultsOSRD
+preplace inst modular_clk_div_1 -pg 1 -lvl 2 -x 360 -y 490 -defaultsOSRD
+preplace inst OR_0 -pg 1 -lvl 1 -x 140 -y 500 -defaultsOSRD
+preplace inst ss_driver_0 -pg 1 -lvl 4 -x 820 -y 230 -defaultsOSRD
+preplace inst display_voltaje_0 -pg 1 -lvl 5 -x 1100 -y 290 -defaultsOSRD
+preplace netloc clk_0_1 1 0 5 30 240 240 240 480 170 NJ 170 940
+preplace netloc rst_0_1 1 0 5 10 400 250 400 460 20 690 30 950J
+preplace netloc sw_0_1 1 0 4 20 230 NJ 230 NJ 230 NJ
+preplace netloc clk_mgnmnt_0_clk_div 1 1 1 N 320
+preplace netloc counter_0_addr 1 2 1 N 330
+preplace netloc generador_seno_0_n_out 1 3 1 690 310n
+preplace netloc sw_sgnl_0_1 1 0 4 20J 420 NJ 420 470J 390 NJ
+preplace netloc mux_0_sgnl 1 4 1 930 80n
+preplace netloc counter_1_addr 1 4 1 N 100
+preplace netloc modular_clk_div_0_clk_div 1 3 1 N 90
+preplace netloc Comparador_0_pwm 1 5 1 NJ 90
+preplace netloc uart_rx_0_msg 1 3 1 690 370n
+preplace netloc rx_0_1 1 0 3 NJ 590 NJ 590 470J
+preplace netloc modular_clk_div_1_clk_div 1 2 1 N 490
+preplace netloc OR_0_uart_clk_rst 1 1 1 N 500
+preplace netloc uart_rx_0_rst_div 1 0 4 30 570 NJ 570 NJ 570 690
+preplace netloc ss_driver_0_display 1 4 1 920 230n
+preplace netloc display_voltaje_0_segments 1 5 1 NJ 270
+preplace netloc display_voltaje_0_an 1 5 1 NJ 290
+preplace netloc display_voltaje_0_dp 1 5 1 NJ 310
+levelinfo -pg 1 -10 140 360 590 820 1100 1270
+pagesize -pg 1 -db -bbox -sgen -140 0 1410 610
+"
+}
+0

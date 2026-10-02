@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../ip_create.srcs/sources_1/imports/Verilog code/display.v" \
+"../../../../ip_create.srcs/sources_1/imports/Verilog code/display_7segmentos.v" \
+"../../../../ip_create.srcs/sim_1/new/TB_display.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
