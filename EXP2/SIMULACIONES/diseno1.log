@@ -1,0 +1,23 @@
+LTspice 26.0.2 for Windows
+Circuit: D:\OneDrive - Universidad Católica de Chile\0_LABANALOGICA\EXPERIENCIA2\diseno1.net
+Start Time: Fri Sep 11 12:57:38 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+D:\OneDrive - Universidad Católica de Chile\0_LABANALOGICA\EXPERIENCIA2\diseno1.net(10): WARNING: Specified period is not longer than the sum of Trise, Tfall, and Ton. Increasing period to 4.0001e-05.
+
+V2 Vtriang N005 PULSE(0 1 0 40u 1n 0 40u)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Direct Newton iteration succeeded in finding operating point.
+
+Simulation stopped by user.
+Total elapsed time: 2.660 seconds.
+
+Files loaded:
+D:\OneDrive - Universidad Católica de Chile\0_LABANALOGICA\EXPERIENCIA2\diseno1.net
+C:\Users\Danae\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\Danae\AppData\Local\LTspice\lib\cmp\standard.bjt
+C:\Users\Danae\AppData\Local\LTspice\lib\sub\UniversalOpAmp2.lib
+
