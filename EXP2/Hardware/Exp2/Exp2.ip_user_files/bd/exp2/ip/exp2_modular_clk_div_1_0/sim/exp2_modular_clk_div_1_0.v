@@ -69,7 +69,7 @@ input wire rst;
 output wire clk_div;
 
   modular_clk_div #(
-    .N(8)
+    .N(434)
   ) inst (
     .clk(clk),
     .rst(rst),

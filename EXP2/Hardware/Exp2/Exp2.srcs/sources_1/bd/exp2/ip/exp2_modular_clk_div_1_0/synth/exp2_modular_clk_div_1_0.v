@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "modular_clk_div,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "exp2_modular_clk_div_1_0,modular_clk_div,{}" *)
-(* CORE_GENERATION_INFO = "exp2_modular_clk_div_1_0,modular_clk_div,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=modular_clk_div,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=8}" *)
+(* CORE_GENERATION_INFO = "exp2_modular_clk_div_1_0,modular_clk_div,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=modular_clk_div,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=434}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module exp2_modular_clk_div_1_0 (
@@ -70,7 +70,7 @@ input wire rst;
 output wire clk_div;
 
   modular_clk_div #(
-    .N(8)
+    .N(434)
   ) inst (
     .clk(clk),
     .rst(rst),

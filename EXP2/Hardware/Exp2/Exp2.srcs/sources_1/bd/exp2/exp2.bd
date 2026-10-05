@@ -11,7 +11,6 @@
     },
     "design_tree": {
       "counter_0": "",
-      "generador_seno_0": "",
       "mux_0": "",
       "Comparador_0": "",
       "counter_1": "",
@@ -21,7 +20,8 @@
       "modular_clk_div_1": "",
       "OR_0": "",
       "ss_driver_0": "",
-      "display_voltaje_0": ""
+      "display_voltaje_0": "",
+      "generador_seno_0": ""
     },
     "ports": {
       "clk": {
@@ -101,10 +101,6 @@
         "vlnv": "xilinx.com:user:counter:1.0",
         "xci_name": "exp2_counter_0_0"
       },
-      "generador_seno_0": {
-        "vlnv": "xilinx.com:user:generador_seno:1.0",
-        "xci_name": "exp2_generador_seno_0_0"
-      },
       "mux_0": {
         "vlnv": "xilinx.com:user:mux:1.0",
         "xci_name": "exp2_mux_0_0"
@@ -131,7 +127,12 @@
       },
       "modular_clk_div_1": {
         "vlnv": "xilinx.com:user:modular_clk_div:1.0",
-        "xci_name": "exp2_modular_clk_div_1_0"
+        "xci_name": "exp2_modular_clk_div_1_0",
+        "parameters": {
+          "N": {
+            "value": "434"
+          }
+        }
       },
       "OR_0": {
         "vlnv": "xilinx.com:user:OR:1.0",
@@ -144,31 +145,35 @@
       "display_voltaje_0": {
         "vlnv": "xilinx.com:user:display_voltaje:1.0",
         "xci_name": "exp2_display_voltaje_0_0"
+      },
+      "generador_seno_0": {
+        "vlnv": "xilinx.com:user:generador_seno:1.0",
+        "xci_name": "exp2_generador_seno_0_0"
       }
     },
     "nets": {
       "clk_0_1": {
         "ports": [
           "clk",
-          "generador_seno_0/clk",
           "modular_clk_div_0/clk",
           "clk_mgnmnt_0/clk",
           "uart_rx_0/clk",
           "modular_clk_div_1/clk",
-          "display_voltaje_0/clk"
+          "display_voltaje_0/clk",
+          "generador_seno_0/clk"
         ]
       },
       "rst_0_1": {
         "ports": [
           "rst",
           "counter_0/rst",
-          "generador_seno_0/rst",
           "counter_1/rst",
           "modular_clk_div_0/rst",
           "clk_mgnmnt_0/rst",
           "uart_rx_0/rst",
           "OR_0/rst",
-          "display_voltaje_0/rst"
+          "display_voltaje_0/rst",
+          "generador_seno_0/rst"
         ]
       },
       "sw_0_1": {

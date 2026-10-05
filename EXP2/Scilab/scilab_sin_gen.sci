@@ -1,6 +1,6 @@
 N = 256;
 n = 0:N-1;
-x = round(128 + 127*sin(2*%pi*n/N));
+x = round(128 + 108*sin(2*%pi*n/N));
 clf();
 plot(n,x);
 xlabel("Muestra");

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Fri Oct  2 19:12:48 2026
+| Date             : Mon Oct  5 16:10:24 2026
 | Host             : Q running 64-bit major release  (build 9200)
 | Command          : report_power -file exp2_wrapper_power_routed.rpt -pb exp2_wrapper_power_summary_routed.pb -rpx exp2_wrapper_power_routed.rpx
 | Design           : exp2_wrapper
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      211 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       66 |     20800 |            0.32 |
-|   Register     |    <0.001 |       82 |     41600 |            0.20 |
+| Slice Logic    |    <0.001 |      229 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       77 |     20800 |            0.37 |
+|   Register     |    <0.001 |       88 |     41600 |            0.21 |
 |   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |    <0.001 |      142 |       --- |             --- |
+| Signals        |    <0.001 |      154 |       --- |             --- |
 | Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
 | I/O            |     0.014 |       19 |       106 |           17.92 |
 | Static Power   |     0.072 |          |           |                 |

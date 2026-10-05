@@ -194,6 +194,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: modular_clk_div_1, and set properties
   set modular_clk_div_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:modular_clk_div:1.0 modular_clk_div_1 ]
+  set_property -dict [ list \
+   CONFIG.N {434} \
+ ] $modular_clk_div_1
 
   # Create instance: mux_0, and set properties
   set mux_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:mux:1.0 mux_0 ]

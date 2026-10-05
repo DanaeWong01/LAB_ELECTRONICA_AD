@@ -2,7 +2,7 @@ clk_mgnmnt.v,verilog,xil_defaultlib,../../../bd/exp2/ipshared/8ade/src/clk_mgnmn
 exp2_clk_mgnmnt_0_0.v,verilog,xil_defaultlib,../../../bd/exp2/ip/exp2_clk_mgnmnt_0_0/sim/exp2_clk_mgnmnt_0_0.v,
 counter.v,verilog,xil_defaultlib,../../../bd/exp2/ipshared/1511/src/counter.v,
 exp2_counter_0_0.v,verilog,xil_defaultlib,../../../bd/exp2/ip/exp2_counter_0_0/sim/exp2_counter_0_0.v,
-generador_seno.v,verilog,xil_defaultlib,../../../bd/exp2/ipshared/8efe/src/generador_seno.v,
+generador_seno.v,verilog,xil_defaultlib,../../../bd/exp2/ipshared/d104/src/generador_seno.v,
 exp2_generador_seno_0_0.v,verilog,xil_defaultlib,../../../bd/exp2/ip/exp2_generador_seno_0_0/sim/exp2_generador_seno_0_0.v,
 mux.v,verilog,xil_defaultlib,../../../bd/exp2/ipshared/2724/src/mux.v,
 exp2_mux_0_0.v,verilog,xil_defaultlib,../../../bd/exp2/ip/exp2_mux_0_0/sim/exp2_mux_0_0.v,

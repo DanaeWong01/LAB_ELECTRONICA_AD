@@ -10,7 +10,7 @@ vlog -work xil_defaultlib  -v2k5 \
 "../../../bd/exp2/ip/exp2_clk_mgnmnt_0_0/sim/exp2_clk_mgnmnt_0_0.v" \
 "../../../bd/exp2/ipshared/1511/src/counter.v" \
 "../../../bd/exp2/ip/exp2_counter_0_0/sim/exp2_counter_0_0.v" \
-"../../../bd/exp2/ipshared/8efe/src/generador_seno.v" \
+"../../../bd/exp2/ipshared/d104/src/generador_seno.v" \
 "../../../bd/exp2/ip/exp2_generador_seno_0_0/sim/exp2_generador_seno_0_0.v" \
 "../../../bd/exp2/ipshared/2724/src/mux.v" \
 "../../../bd/exp2/ip/exp2_mux_0_0/sim/exp2_mux_0_0.v" \
