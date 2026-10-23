@@ -42,4 +42,15 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==exp2_ss_driver_
 # IP: bd/exp2/ip/exp2_display_voltaje_0_0/exp2_display_voltaje_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==exp2_display_voltaje_0_0 || ORIG_REF_NAME==exp2_display_voltaje_0_0} -quiet] -quiet
 
+# IP: bd/exp2/ip/exp2_ila_0_0/exp2_ila_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==exp2_ila_0_0 || ORIG_REF_NAME==exp2_ila_0_0} -quiet] -quiet
+
+# XDC: bd/exp2/ip/exp2_ila_0_0/ila_v6_2/constraints/ila_impl.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==exp2_ila_0_0 || ORIG_REF_NAME==exp2_ila_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/exp2/ip/exp2_ila_0_0/ila_v6_2/constraints/ila.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==exp2_ila_0_0 || ORIG_REF_NAME==exp2_ila_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/exp2/ip/exp2_ila_0_0/exp2_ila_0_0_ooc.xdc
+
 # XDC: bd/exp2/exp2_ooc.xdc

@@ -189,6 +189,18 @@ proc create_root_design { parentCell } {
   # Create instance: generador_seno_0, and set properties
   set generador_seno_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:generador_seno:1.0 generador_seno_0 ]
 
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  set_property -dict [ list \
+   CONFIG.C_DATA_DEPTH {131072} \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {2} \
+   CONFIG.C_PROBE0_TYPE {1} \
+   CONFIG.C_PROBE0_WIDTH {8} \
+   CONFIG.C_PROBE1_TYPE {2} \
+ ] $ila_0
+
   # Create instance: modular_clk_div_0, and set properties
   set modular_clk_div_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:modular_clk_div:1.0 modular_clk_div_0 ]
 
@@ -210,7 +222,7 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net Comparador_0_pwm [get_bd_ports pwm] [get_bd_pins Comparador_0/pwm]
   connect_bd_net -net OR_0_uart_clk_rst [get_bd_pins OR_0/uart_clk_rst] [get_bd_pins modular_clk_div_1/rst]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk] [get_bd_pins clk_mgnmnt_0/clk] [get_bd_pins display_voltaje_0/clk] [get_bd_pins generador_seno_0/clk] [get_bd_pins modular_clk_div_0/clk] [get_bd_pins modular_clk_div_1/clk] [get_bd_pins uart_rx_0/clk]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk] [get_bd_pins clk_mgnmnt_0/clk] [get_bd_pins display_voltaje_0/clk] [get_bd_pins generador_seno_0/clk] [get_bd_pins ila_0/clk] [get_bd_pins modular_clk_div_0/clk] [get_bd_pins modular_clk_div_1/clk] [get_bd_pins uart_rx_0/clk]
   connect_bd_net -net clk_mgnmnt_0_clk_div [get_bd_pins clk_mgnmnt_0/clk_div] [get_bd_pins counter_0/clk_div]
   connect_bd_net -net counter_0_addr [get_bd_pins counter_0/addr] [get_bd_pins generador_seno_0/addr]
   connect_bd_net -net counter_1_addr [get_bd_pins Comparador_0/rampa] [get_bd_pins counter_1/addr]
@@ -220,8 +232,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net generador_seno_0_n_out [get_bd_pins generador_seno_0/n_out] [get_bd_pins mux_0/sen]
   connect_bd_net -net modular_clk_div_0_clk_div [get_bd_pins counter_1/clk_div] [get_bd_pins modular_clk_div_0/clk_div]
   connect_bd_net -net modular_clk_div_1_clk_div [get_bd_pins modular_clk_div_1/clk_div] [get_bd_pins uart_rx_0/clk_uart]
-  connect_bd_net -net mux_0_sgnl [get_bd_pins Comparador_0/sgn] [get_bd_pins mux_0/sgnl]
-  connect_bd_net -net rst_0_1 [get_bd_ports rst] [get_bd_pins OR_0/rst] [get_bd_pins clk_mgnmnt_0/rst] [get_bd_pins counter_0/rst] [get_bd_pins counter_1/rst] [get_bd_pins display_voltaje_0/rst] [get_bd_pins generador_seno_0/rst] [get_bd_pins modular_clk_div_0/rst] [get_bd_pins uart_rx_0/rst]
+  connect_bd_net -net mux_0_sgnl [get_bd_pins Comparador_0/sgn] [get_bd_pins ila_0/probe0] [get_bd_pins mux_0/sgnl]
+  connect_bd_net -net rst_0_1 [get_bd_ports rst] [get_bd_pins OR_0/rst] [get_bd_pins clk_mgnmnt_0/rst] [get_bd_pins counter_0/rst] [get_bd_pins counter_1/rst] [get_bd_pins display_voltaje_0/rst] [get_bd_pins generador_seno_0/rst] [get_bd_pins ila_0/probe1] [get_bd_pins modular_clk_div_0/rst] [get_bd_pins uart_rx_0/rst]
   connect_bd_net -net rx_0_1 [get_bd_ports rx] [get_bd_pins uart_rx_0/rx]
   connect_bd_net -net ss_driver_0_display [get_bd_pins display_voltaje_0/display_value] [get_bd_pins ss_driver_0/display]
   connect_bd_net -net sw_0_1 [get_bd_ports sw_freq] [get_bd_pins clk_mgnmnt_0/sw] [get_bd_pins ss_driver_0/sw]

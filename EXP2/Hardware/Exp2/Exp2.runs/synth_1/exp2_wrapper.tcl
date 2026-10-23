@@ -70,9 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
-set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -82,6 +82,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.cache/wt [current_project]
 set_property parent.project_path C:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/qbeck/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
@@ -94,6 +95,10 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib C:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/hdl/exp2_wrapper.v
 add_files C:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/exp2.bd
+set_property used_in_synthesis false [get_files -all c:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/ip/exp2_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/ip/exp2_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/ip/exp2_ila_0_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/ip/exp2_ila_0_0/exp2_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/LAB_ELECTRONICA_AD/EXP2/Hardware/Exp2/Exp2.srcs/sources_1/bd/exp2/exp2_ooc.xdc]
 
 OPTRACE "Adding files" END { }

@@ -1,6 +1,6 @@
 LTspice 24.1.5 for Windows
 Circuit: C:\LAB_ELECTRONICA_AD\EXP2\Spice\EQ HPF.net
-Start Time: Fri Sep 25 13:07:19 2026
+Start Time: Fri Oct 16 15:11:49 2026
 solver = Normal
 Maximum thread count: 8
 tnom = 27
@@ -59,7 +59,7 @@ Source Step = 86.7424%
 Source Step = 98.1061%
 Source stepping succeeded in finding the operating point.
 
-Total elapsed time: 0.587 seconds.
+Total elapsed time: 0.445 seconds.
 
 Files loaded:
 C:\LAB_ELECTRONICA_AD\EXP2\Spice\EQ HPF.net

@@ -23,6 +23,6 @@ void loop () {
 
 //Serial.println (adc_in ) ; // solo para ver los datos
 
-Serial2.write (adc_out) ;
+ Serial2.write (adc_out) ;
 }
 

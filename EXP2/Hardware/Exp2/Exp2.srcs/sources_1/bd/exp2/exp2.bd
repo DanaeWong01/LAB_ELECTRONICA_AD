@@ -21,7 +21,8 @@
       "OR_0": "",
       "ss_driver_0": "",
       "display_voltaje_0": "",
-      "generador_seno_0": ""
+      "generador_seno_0": "",
+      "ila_0": ""
     },
     "ports": {
       "clk": {
@@ -149,6 +150,33 @@
       "generador_seno_0": {
         "vlnv": "xilinx.com:user:generador_seno:1.0",
         "xci_name": "exp2_generador_seno_0_0"
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "exp2_ila_0_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "131072"
+          },
+          "C_ENABLE_ILA_AXI_MON": {
+            "value": "false"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "2"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "1"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "8"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "2"
+          }
+        }
       }
     },
     "nets": {
@@ -160,7 +188,8 @@
           "uart_rx_0/clk",
           "modular_clk_div_1/clk",
           "display_voltaje_0/clk",
-          "generador_seno_0/clk"
+          "generador_seno_0/clk",
+          "ila_0/clk"
         ]
       },
       "rst_0_1": {
@@ -173,7 +202,8 @@
           "uart_rx_0/rst",
           "OR_0/rst",
           "display_voltaje_0/rst",
-          "generador_seno_0/rst"
+          "generador_seno_0/rst",
+          "ila_0/probe1"
         ]
       },
       "sw_0_1": {
@@ -210,7 +240,8 @@
       "mux_0_sgnl": {
         "ports": [
           "mux_0/sgnl",
-          "Comparador_0/sgn"
+          "Comparador_0/sgn",
+          "ila_0/probe0"
         ]
       },
       "counter_1_addr": {

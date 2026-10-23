@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Mon Oct  5 16:06:14 2026
+//Date        : Thu Oct  8 15:39:25 2026
 //Host        : Q running 64-bit major release  (build 9200)
 //Command     : generate_target exp2.bd
 //Design      : exp2
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "exp2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=exp2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "exp2.hwdef" *) 
+(* CORE_GENERATION_INFO = "exp2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=exp2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=13,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "exp2.hwdef" *) 
 module exp2
    (an,
     clk,
@@ -93,6 +93,10 @@ module exp2
         .clk(clk_0_1),
         .n_out(generador_seno_0_n_out),
         .rst(rst_0_1));
+  exp2_ila_0_0 ila_0
+       (.clk(clk_0_1),
+        .probe0(mux_0_sgnl),
+        .probe1(rst_0_1));
   exp2_modular_clk_div_0_0 modular_clk_div_0
        (.clk(clk_0_1),
         .clk_div(modular_clk_div_0_clk_div),
