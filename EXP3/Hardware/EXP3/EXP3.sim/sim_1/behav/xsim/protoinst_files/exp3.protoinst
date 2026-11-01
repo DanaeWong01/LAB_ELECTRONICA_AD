@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"exp3": {
+			"proto_instances": {
+			}
+		}
+	}
+}

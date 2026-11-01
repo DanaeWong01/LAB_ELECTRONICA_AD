@@ -1,0 +1,12 @@
+
+{ 
+    crc :  3038429767900721106  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 417beaa6e83641ec91b996cbc26d68fe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L xlconstant_v1_1_7 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot esp3_TB_behav xil_defaultlib.esp3_TB xil_defaultlib.glbl" , 
+    buildDate : "May 27 2020" , 
+    buildTime : "20:09:33" , 
+    linkCmd : "C:\\Xilinx\\Vivado\\2020.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/esp3_TB_behav/xsimk.exe\"   \"xsim.dir/esp3_TB_behav/obj/xsim_0.win64.obj\" \"xsim.dir/esp3_TB_behav/obj/xsim_1.win64.obj\" -L\"C:\\Xilinx\\Vivado\\2020.1\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
