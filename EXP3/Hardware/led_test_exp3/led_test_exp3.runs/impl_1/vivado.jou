@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Nov  5 15:37:05 2026
+# Process ID: 19352
+# Current directory: C:/LAB_ELECTRONICA_AD/EXP3/Hardware/led_test_exp3/led_test_exp3.runs/impl_1
+# Command line: vivado.exe -log led_teclado_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source led_teclado_wrapper.tcl -notrace
+# Log file: C:/LAB_ELECTRONICA_AD/EXP3/Hardware/led_test_exp3/led_test_exp3.runs/impl_1/led_teclado_wrapper.vdi
+# Journal file: C:/LAB_ELECTRONICA_AD/EXP3/Hardware/led_test_exp3/led_test_exp3.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source led_teclado_wrapper.tcl -notrace

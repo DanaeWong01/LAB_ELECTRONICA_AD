@@ -1,9 +1,0 @@
-Vivado Simulator 2020.1
-Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 417beaa6e83641ec91b996cbc26d68fe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot esp3_TB_behav xil_defaultlib.esp3_TB xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-ERROR: [VRFC 10-2063] Module <blk_mem_gen_v8_4_4> not found while processing module instance <inst> [C:/LAB_ELECTRONICA_AD/EXP3/Hardware/EXP3/EXP3.ip_user_files/bd/exp3/ip/exp3_blk_mem_gen_0_0/sim/exp3_blk_mem_gen_0_0.v:73]
-ERROR: [VRFC 10-2063] Module <xlconstant_v1_1_7_xlconstant> not found while processing module instance <inst> [C:/LAB_ELECTRONICA_AD/EXP3/Hardware/EXP3/EXP3.ip_user_files/bd/exp3/ip/exp3_xlconstant_0_0/sim/exp3_xlconstant_0_0.v:62]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

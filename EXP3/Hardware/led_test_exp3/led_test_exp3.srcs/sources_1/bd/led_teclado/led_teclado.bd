@@ -1,0 +1,590 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xAC2FF09DBE2CDE17",
+      "device": "xc7a35tcpg236-1",
+      "name": "led_teclado",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2020.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ila_0": "",
+      "PS2_RX_0": "",
+      "DB_0": "",
+      "led_enable_0": "",
+      "teclado_a_led_0": "",
+      "dec_notas_0": "",
+      "gen_frecuencias_0": "",
+      "modular_clk_div_0": "",
+      "sinusoide_0": "",
+      "blk_mem_gen_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "led_teclado_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "ps2c": {
+        "direction": "I"
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "ps2d": {
+        "direction": "I"
+      },
+      "leds": {
+        "direction": "O",
+        "left": "11",
+        "right": "0"
+      },
+      "wave": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "led_teclado_ila_0_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "16384"
+          },
+          "C_ENABLE_ILA_AXI_MON": {
+            "value": "false"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "4"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "PS2_RX_0": {
+        "vlnv": "xilinx.com:module_ref:PS2_RX:1.0",
+        "xci_name": "led_teclado_PS2_RX_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PS2_RX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ps2c": {
+            "direction": "I"
+          },
+          "ps2d": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "led_teclado_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "msg": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "msg_ready": {
+            "direction": "O"
+          }
+        }
+      },
+      "DB_0": {
+        "vlnv": "xilinx.com:module_ref:DB:1.0",
+        "xci_name": "led_teclado_DB_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DB",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "led_teclado_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "ps2c": {
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "ps2c_DB": {
+            "direction": "O"
+          }
+        }
+      },
+      "led_enable_0": {
+        "vlnv": "xilinx.com:module_ref:led_enable:1.0",
+        "xci_name": "led_teclado_led_enable_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "led_enable",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "leds": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "leds_enable": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "teclado_a_led_0": {
+        "vlnv": "xilinx.com:module_ref:teclado_a_led:1.0",
+        "xci_name": "led_teclado_teclado_a_led_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "teclado_a_led",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "led_teclado_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "msg": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "msg_ready": {
+            "direction": "I"
+          },
+          "leds": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "tecla_presionada": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "nota_activa": {
+            "direction": "O"
+          }
+        }
+      },
+      "dec_notas_0": {
+        "vlnv": "xilinx.com:module_ref:dec_notas:1.0",
+        "xci_name": "led_teclado_dec_notas_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "dec_notas",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "tecla_presionada": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "salto_entero": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "salto_decimal": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "gen_frecuencias_0": {
+        "vlnv": "xilinx.com:module_ref:gen_frecuencias:1.0",
+        "xci_name": "led_teclado_gen_frecuencias_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "gen_frecuencias",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "led_teclado_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clkdiv": {
+            "direction": "I"
+          },
+          "salto_entero": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "salto_decimal": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "posicion": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          }
+        }
+      },
+      "modular_clk_div_0": {
+        "vlnv": "xilinx.com:module_ref:modular_clk_div:1.0",
+        "xci_name": "led_teclado_modular_clk_div_0_0",
+        "parameters": {
+          "N": {
+            "value": "12500"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "modular_clk_div",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "led_teclado_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clkdiv": {
+            "direction": "O"
+          }
+        }
+      },
+      "sinusoide_0": {
+        "vlnv": "xilinx.com:module_ref:sinusoide:1.0",
+        "xci_name": "led_teclado_sinusoide_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sinusoide",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "led_teclado_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "nota_activa": {
+            "direction": "I"
+          },
+          "posicion": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "ROM_data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ROM_addr": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "wave": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "led_teclado_blk_mem_gen_0_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../coe/cuarto_sen.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Always_Enabled"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "Single_Port_ROM"
+          },
+          "Port_A_Write_Rate": {
+            "value": "0"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "128"
+          },
+          "Write_Width_A": {
+            "value": "8"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk",
+          "ila_0/clk",
+          "PS2_RX_0/clk",
+          "DB_0/clk",
+          "teclado_a_led_0/clk",
+          "gen_frecuencias_0/clk",
+          "modular_clk_div_0/clk",
+          "sinusoide_0/clk",
+          "blk_mem_gen_0/clka"
+        ]
+      },
+      "ps2c_0_1": {
+        "ports": [
+          "ps2c",
+          "ila_0/probe0",
+          "DB_0/ps2c"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst",
+          "PS2_RX_0/rst",
+          "DB_0/rst",
+          "teclado_a_led_0/rst",
+          "gen_frecuencias_0/rst",
+          "modular_clk_div_0/rst",
+          "sinusoide_0/rst"
+        ]
+      },
+      "ps2d_0_1": {
+        "ports": [
+          "ps2d",
+          "ila_0/probe1",
+          "PS2_RX_0/ps2d"
+        ]
+      },
+      "PS2_RX_0_msg": {
+        "ports": [
+          "PS2_RX_0/msg",
+          "teclado_a_led_0/msg"
+        ]
+      },
+      "PS2_RX_0_msg_ready": {
+        "ports": [
+          "PS2_RX_0/msg_ready",
+          "teclado_a_led_0/msg_ready"
+        ]
+      },
+      "teclado_a_led_0_leds": {
+        "ports": [
+          "teclado_a_led_0/leds",
+          "led_enable_0/leds"
+        ]
+      },
+      "teclado_a_led_0_nota_activa": {
+        "ports": [
+          "teclado_a_led_0/nota_activa",
+          "ila_0/probe3",
+          "led_enable_0/enable",
+          "sinusoide_0/nota_activa"
+        ]
+      },
+      "led_enable_0_leds_enable": {
+        "ports": [
+          "led_enable_0/leds_enable",
+          "leds"
+        ]
+      },
+      "teclado_a_led_0_tecla_presionada": {
+        "ports": [
+          "teclado_a_led_0/tecla_presionada",
+          "ila_0/probe2",
+          "dec_notas_0/tecla_presionada"
+        ]
+      },
+      "DB_0_ps2c_DB": {
+        "ports": [
+          "DB_0/ps2c_DB",
+          "PS2_RX_0/ps2c"
+        ]
+      },
+      "dec_notas_0_salto_entero": {
+        "ports": [
+          "dec_notas_0/salto_entero",
+          "gen_frecuencias_0/salto_entero"
+        ]
+      },
+      "dec_notas_0_salto_decimal": {
+        "ports": [
+          "dec_notas_0/salto_decimal",
+          "gen_frecuencias_0/salto_decimal"
+        ]
+      },
+      "modular_clk_div_0_clkdiv": {
+        "ports": [
+          "modular_clk_div_0/clkdiv",
+          "gen_frecuencias_0/clkdiv"
+        ]
+      },
+      "gen_frecuencias_0_posicion": {
+        "ports": [
+          "gen_frecuencias_0/posicion",
+          "sinusoide_0/posicion"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "sinusoide_0/ROM_data"
+        ]
+      },
+      "sinusoide_0_ROM_addr": {
+        "ports": [
+          "sinusoide_0/ROM_addr",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "sinusoide_0_wave": {
+        "ports": [
+          "sinusoide_0/wave",
+          "wave"
+        ]
+      }
+    }
+  }
+}

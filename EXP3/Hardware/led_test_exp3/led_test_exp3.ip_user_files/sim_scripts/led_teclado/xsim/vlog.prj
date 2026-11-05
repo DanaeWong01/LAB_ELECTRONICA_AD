@@ -1,0 +1,16 @@
+verilog xil_defaultlib --include "../../../../led_test_exp3.srcs/sources_1/bd/led_teclado/ipshared/1b7e/hdl/verilog" --include "../../../../led_test_exp3.srcs/sources_1/bd/led_teclado/ipshared/122e/hdl/verilog" --include "../../../../led_test_exp3.srcs/sources_1/bd/led_teclado/ipshared/b205/hdl/verilog" --include "../../../../led_test_exp3.srcs/sources_1/bd/led_teclado/ipshared/c968/hdl/verilog" \
+"../../../bd/led_teclado/ip/led_teclado_PS2_RX_0_0/sim/led_teclado_PS2_RX_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_teclado_a_led_0_0/sim/led_teclado_teclado_a_led_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_led_enable_0_0/sim/led_teclado_led_enable_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_ila_0_0/sim/led_teclado_ila_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_DB_0_1/sim/led_teclado_DB_0_1.v" \
+"../../../bd/led_teclado/ip/led_teclado_dec_notas_0_0/sim/led_teclado_dec_notas_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_gen_frecuencias_0_0/sim/led_teclado_gen_frecuencias_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_modular_clk_div_0_0/sim/led_teclado_modular_clk_div_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_sinusoide_0_0/sim/led_teclado_sinusoide_0_0.v" \
+"../../../bd/led_teclado/ip/led_teclado_blk_mem_gen_0_0/sim/led_teclado_blk_mem_gen_0_0.v" \
+"../../../bd/led_teclado/sim/led_teclado.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
