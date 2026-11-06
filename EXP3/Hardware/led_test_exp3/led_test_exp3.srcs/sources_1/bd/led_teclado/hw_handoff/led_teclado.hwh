@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Nov  5 15:33:34 2026" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Nov  6 00:56:21 2026" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:basys3:part0:1.1" DEVICE="7a35t" NAME="led_teclado" PACKAGE="cpg236" SPEEDGRADE="-1"/>
 
@@ -9,11 +9,11 @@
         <CONNECTION INSTANCE="ila_0" PORT="clk"/>
         <CONNECTION INSTANCE="PS2_RX_0" PORT="clk"/>
         <CONNECTION INSTANCE="DB_0" PORT="clk"/>
-        <CONNECTION INSTANCE="teclado_a_led_0" PORT="clk"/>
         <CONNECTION INSTANCE="gen_frecuencias_0" PORT="clk"/>
         <CONNECTION INSTANCE="modular_clk_div_0" PORT="clk"/>
         <CONNECTION INSTANCE="sinusoide_0" PORT="clk"/>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
+        <CONNECTION INSTANCE="teclado_a_led_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="ps2c" SIGIS="undef" SIGNAME="External_Ports_ps2c">
@@ -26,10 +26,10 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="PS2_RX_0" PORT="rst"/>
         <CONNECTION INSTANCE="DB_0" PORT="rst"/>
-        <CONNECTION INSTANCE="teclado_a_led_0" PORT="rst"/>
         <CONNECTION INSTANCE="gen_frecuencias_0" PORT="rst"/>
         <CONNECTION INSTANCE="modular_clk_div_0" PORT="rst"/>
         <CONNECTION INSTANCE="sinusoide_0" PORT="rst"/>
+        <CONNECTION INSTANCE="teclado_a_led_0" PORT="rst"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="ps2d" SIGIS="undef" SIGNAME="External_Ports_ps2d">
@@ -284,7 +284,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="External_Ports_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>

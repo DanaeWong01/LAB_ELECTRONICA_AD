@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Thu Nov  5 15:38:48 2026
+| Date             : Fri Nov  6 01:03:56 2026
 | Host             : Q running 64-bit major release  (build 9200)
 | Command          : report_power -file led_teclado_wrapper_power_routed.rpt -pb led_teclado_wrapper_power_summary_routed.pb -rpx led_teclado_wrapper_power_routed.rpx
 | Design           : led_teclado_wrapper
@@ -52,9 +52,9 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |    <0.001 |     3967 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1198 |     20800 |            5.76 |
+| Clocks                   |    <0.001 |        3 |       --- |             --- |
+| Slice Logic              |    <0.001 |     3969 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     1200 |     20800 |            5.77 |
 |   Register               |    <0.001 |     2057 |     41600 |            4.94 |
 |   CARRY4                 |    <0.001 |       52 |      8150 |            0.64 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
@@ -62,7 +62,7 @@ Table of Contents
 |   LUT as Shift Register  |    <0.001 |       82 |      9600 |            0.85 |
 |   F7/F8 Muxes            |    <0.001 |        3 |     32600 |           <0.01 |
 |   Others                 |     0.000 |      263 |       --- |             --- |
-| Signals                  |    <0.001 |     2983 |       --- |             --- |
+| Signals                  |    <0.001 |     2984 |       --- |             --- |
 | Block RAM                |    <0.001 |        6 |        50 |           12.00 |
 | I/O                      |     0.004 |       24 |       106 |           22.64 |
 | Static Power             |     0.072 |          |           |                 |

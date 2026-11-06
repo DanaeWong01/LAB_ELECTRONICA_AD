@@ -76,12 +76,12 @@ module dec_notas(
             end
 
             //SEGUNDA 8VA DE LA ESCALA
-            8'h46: begin // I (DO)
+            8'h43: begin // I (DO)
                 salto_entero = 7'd33;
                 salto_decimal = 7'd49;
             end
 
-            8'h43: begin // 9 (DO#)
+            8'h46: begin // 9 (DO#)
                 salto_entero = 7'd35;
                 salto_decimal = 7'd48;
             end

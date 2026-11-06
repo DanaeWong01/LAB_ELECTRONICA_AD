@@ -53,8 +53,8 @@ module teclado_a_led(
                         8'h4D: begin leds <= 12'b0000_0000_01; tecla_presionada<=msg; end
                         
                         8'h1E, 8'h26, 8'h2E, 8'h36,
-                        8'h3D, 8'h43, 8'h44, 
-                        8'h45, 8'h1A, 8'h1B,
+                        8'h3D, 8'h43, 
+                        8'h45, 8'h46, 8'h1A, 8'h1B,
                         8'h22, 8'h23, 8'h21, 8'h2B,
                         8'h2A: begin
                             tecla_presionada <= msg;
