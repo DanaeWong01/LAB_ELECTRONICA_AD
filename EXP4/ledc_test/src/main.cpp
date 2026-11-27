@@ -1,20 +1,22 @@
 #include <Arduino.h>
 
-const int PIN_PWM = 18;
+const int PIN_PWM = 25;
 const int PWM_FREQ = 10000;
-const int BITS = 64;
+const int BITS = 12;
 const int PWM_CHANNEL = 0;
+const int PWM_MAX = 4096;
 
 void setup() {
     Serial.begin(115200);
 
-    // API de Arduino-ESP32 3.x
-    ledcSetup(PWM_CHANNEL, PWM_FREQ, BITS);
+    double freq = ledcSetup(PWM_CHANNEL, PWM_FREQ, BITS);
+
+    Serial.printf("Frecuencia configurada: %.2f Hz\n", freq);
+
     ledcAttachPin(PIN_PWM, PWM_CHANNEL);
 
-    ledcWrite(PWM_CHANNEL, 32768); // 50% duty
+    ledcWrite(PWM_CHANNEL, PWM_MAX*0.2);
 }
 
 void loop() {
 }
-
